@@ -26,8 +26,6 @@
     // tapping_term_ms = <200>;
 };
 
-&sk { ignore-modifiers; };
-
 / {
     macros {
         // sometimes my device thinks a modifier is being held down
@@ -51,7 +49,12 @@
         combo_settings {
             timeout-ms = <300>;
             key-positions = <30 31>;
+            bindings = <&mo 5>;
+        };
+
+        combo_fun {
             bindings = <&mo 4>;
+            key-positions = <32 33>;
         };
     };
 
@@ -62,36 +65,39 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G               &kp H      &kp J  &kp K      &kp L    &kp IT_OGRV
-&kp Z  &kp X  &kp C  &kp V  &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp IT_UGRV
-                     &mo 2  &mt LSHIFT SPACE    &kp SPACE  &sl 1
+&kp Q  &kp W  &kp E  &kp R      &kp T          &kp Y        &kp U          &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F      &kp G          &kp H        &kp J          &kp K      &kp L    &kp APOSTROPHE
+&kp Z  &kp X  &kp C  &kp V      &kp B          &kp N        &kp M          &kp COMMA  &kp DOT  &kp SEMICOLON
+                     &lt 2 TAB  &lt 1 SPACE    &lt 3 ENTER  &kp BACKSPACE
             >;
         };
 
-        // Numbers and high frequency symbols
-
-        num_nav_layer {
+        nav_layer {
             bindings = <
-&kp N1        &kp N2       &kp N3       &kp N4       &kp N5         &kp N6      &kp N7       &kp N8        &kp N9        &kp N0
-&kp IT_LESS   &kp IT_USD   &kp IT_LPAR  &kp IT_LBRC  &kp IT_LBKT    &kp IT_EQL  &kp IT_QUES  &kp IT_SQUOT  &kp IT_MINUS  &kp IT_AST
-&kp IT_GREAT  &kp IT_PERC  &kp IT_RPAR  &kp IT_RBRC  &kp IT_RBKT    &kp IT_AT   &kp IT_EXCL  &kp IT_DQUOT  &kp IT_PLUS   &kp IT_FSLH
-                                        &mo 3        &mo 0          &trans      &trans
+&trans  &trans           &trans             &trans                 &trans           &trans    &trans    &trans        &trans            &trans
+&trans  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp PAGE_UP      &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT         &trans
+&trans  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN    &trans    &trans    &kp KP_EQUAL  &kp GREATER_THAN  &kp LESS_THAN
+                                            &trans                 &trans           &trans    &trans
             >;
         };
 
-        // Main modifiers and arrow keys
+        num_layer {
+            bindings = <
+&trans        &trans       &trans       &trans       &trans         &trans      &kp N7  &kp N8  &kp N9  &trans
+&kp IT_LESS   &kp IT_USD   &kp IT_LPAR  &kp IT_LBRC  &kp IT_LBKT    &kp IT_EQL  &kp N4  &kp N5  &kp N6  &kp IT_AST
+&kp IT_GREAT  &kp IT_PERC  &kp IT_RPAR  &kp IT_RBRC  &kp IT_RBKT    &kp N0      &kp N1  &kp N2  &kp N3  &kp IT_FSLH
+                                        &mo 4        &mo 0          &trans      &trans
+            >;
+        };
 
         sym_layer {
             bindings = <
-&kp ESC    &trans     &trans      &trans     &trans       &kp PG_UP     &kp HOME  &kp UP    &kp END    &kp CAPS
-&sk LALT   &sk LGUI   &sk LSHIFT  &sk LCTRL  &kp RALT     &kp PG_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL
-&kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp TAB    &kp LC(V)    &kp LC(BSPC)  &kp BSPC  &trans    &trans     &trans
-                                  &trans     &kp LCTRL    &kp ENTER     &mo 3
+&kp ESC    &trans     &trans     &trans  &trans       &trans     &kp AMPERSAND    &kp ASTERISK  &trans     &trans
+&trans     &trans     &trans     &trans  &trans       &trans     &kp DOLLAR       &kp PERCENT   &kp CARET  &trans
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans  &kp LC(V)    &trans     &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &trans
+                                 &trans  &trans       &kp ENTER  &mo 4
             >;
         };
-
-        // Function keys with modifiers
 
         fnc_layer {
             bindings = <
@@ -101,10 +107,6 @@
                         &none   &none     &none    &none
             >;
         };
-
-        // Low frequency symbols.
-        // Used to type regional accents.
-        // Used to change the keyboard's settings.
 
         settings_layer {
             bindings = <
