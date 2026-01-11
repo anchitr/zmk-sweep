@@ -56,6 +56,16 @@
             bindings = <&mo 4>;
             key-positions = <32 33>;
         };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        CapsLock {
+            bindings = <&kp CAPS>;
+            key-positions = <13 16>;
+        };
     };
 
     keymap {
@@ -65,18 +75,18 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R      &kp T          &kp Y        &kp U          &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F      &kp G          &kp H        &kp J          &kp K      &kp L    &kp APOSTROPHE
-&kp Z  &kp X  &kp C  &kp V      &kp B          &kp N        &kp M          &kp COMMA  &kp DOT  &kp SEMICOLON
-                     &lt 2 TAB  &lt 1 SPACE    &lt 3 ENTER  &kp BACKSPACE
+&kp Q         &kp W           &kp E        &kp R      &kp T          &kp Y        &kp U          &kp I        &kp O       &kp P
+&mt LMETA A   &mt LEFT_ALT S  &mt LCTRL D  &kp F      &kp G          &kp H        &kp J          &mt RCTRL K  &mt RALT L  &kp APOSTROPHE
+&mt LSHIFT Z  &kp X           &kp C        &kp V      &kp B          &kp N        &kp M          &kp COMMA    &kp DOT     &mt RSHFT SEMI
+                                           &lt 2 TAB  &lt 1 SPACE    &lt 3 ENTER  &kp BACKSPACE
             >;
         };
 
         nav_layer {
             bindings = <
-&trans  &trans           &trans             &trans                 &trans           &trans    &trans    &trans        &trans            &trans
-&trans  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp PAGE_UP      &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT         &trans
-&trans  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN    &trans    &trans    &kp KP_EQUAL  &kp GREATER_THAN  &kp LESS_THAN
+&trans  &trans           &trans             &trans                 &trans           &trans    &trans        &trans         &trans            &trans
+&trans  &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp PAGE_UP      &kp LEFT  &kp DOWN      &kp UP         &kp RIGHT         &trans
+&trans  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN    &trans    &kp KP_EQUAL  &kp LESS_THAN  &kp GREATER_THAN  &trans
                                             &trans                 &trans           &trans    &trans
             >;
         };
@@ -92,7 +102,7 @@
 
         sym_layer {
             bindings = <
-&kp ESC    &trans     &trans     &trans  &trans       &trans     &kp AMPERSAND    &kp ASTERISK  &trans     &trans
+&trans     &trans     &trans     &trans  &trans       &trans     &kp AMPERSAND    &kp ASTERISK  &trans     &trans
 &trans     &trans     &trans     &trans  &trans       &trans     &kp DOLLAR       &kp PERCENT   &kp CARET  &trans
 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans  &kp LC(V)    &trans     &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &trans
                                  &trans  &trans       &kp ENTER  &mo 4
@@ -101,10 +111,10 @@
 
         fnc_layer {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
-&none   &none   &none   &none   &none     &kp F11  &kp F12  &kp PRINTSCREEN  &none   &none
-&none   &none   &none   &none   &none     &none    &none    &none            &none   &none
-                        &none   &none     &none    &none
+&kp F1  &kp F2  &kp F3  &kp F4            &kp F5               &kp F6   &kp F7   &kp F8           &kp F9   &kp F10
+&none   &none   &none   &none             &none                &kp F11  &kp F12  &kp PRINTSCREEN  &kp END  &none
+&none   &none   &none   &none             &none                &none    &none    &none            &none    &none
+                        &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))    &none    &none
             >;
         };
 
